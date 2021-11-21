@@ -1,0 +1,23 @@
+.counter {
+  display: inline-flex;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-left: 20px;
+}
+.counter > * {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.add,
+.minus {
+  background-color: #fafafa;
+  cursor: pointer;
+  font-size: 20px;
+}
+.number {
+  font-size: 30px;
+  color: #6a5af9;
+}
