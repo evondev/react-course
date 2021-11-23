@@ -1,9 +1,11 @@
 import "./App.css";
-import YoutubeList from "./components/youtube/YoutubeList";
+import Counter from "./components/counter/Counter";
+import Toggle from "./components/toggle/Toggle";
 function App() {
   return (
     <div>
-      <YoutubeList></YoutubeList>
+      <Toggle></Toggle>
+      <Counter></Counter>
     </div>
   );
 }
