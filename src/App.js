@@ -1,9 +1,9 @@
 import "./App.css";
-import Game from "./components/tictactoe/Game";
+import DoubleCounter from "./components/counter/DoubleCounter";
 function App() {
   return (
     <div>
-      <Game></Game>
+      <DoubleCounter></DoubleCounter>
     </div>
   );
 }
