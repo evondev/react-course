@@ -1,9 +1,10 @@
-import "./App.css";
-import DoubleCounter from "./components/counter/DoubleCounter";
+import "./App.scss";
+import Button from "./components/button/Button";
 function App() {
   return (
     <div>
-      <DoubleCounter></DoubleCounter>
+      <Button>Primary</Button>
+      <Button secondary>Secondary</Button>
     </div>
   );
 }
