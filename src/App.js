@@ -1,10 +1,17 @@
 import "./App.scss";
-import Button from "./components/button/Button";
+import Card from "./components/card/Card";
+import CardList from "./components/card/CardList";
 function App() {
   return (
     <div>
-      <Button>Primary</Button>
-      <Button secondary>Secondary</Button>
+      <CardList>
+        <Card secondary={true}></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+        <Card></Card>
+      </CardList>
     </div>
   );
 }
