@@ -15,9 +15,9 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
-     "build": "craco build",
-     "test": "craco test",
+    "start": "TAILWIND_MODE=watch craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,6 +41,7 @@
   "devDependencies": {
     "autoprefixer": "^9.8.8",
     "babel-plugin-styled-components": "^2.0.2",
+    "cross-env": "^7.0.3",
     "postcss": "^7.0.39",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
