@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-const getRandomPhotos = (page) => {
-  return axios
-    .get(`https://picsum.photos/v2/list?page=${page}&limit=8`)
-    .then((response) => {
-      // console.log(response);
-      return response.data;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+const getRandomPhotos = async (page) => {
+  try {
+    const response = await axios.get(
+      `https://picsum.photos/v2/list?page=${page}&limit=8`
+    );
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 // https://picsum.photos/v2/list
 // https://picsum.photos/v2/list?page=2&limit=100
@@ -21,16 +20,13 @@ const Photos = () => {
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(1);
   // console.log("outside");
-  const handleLoadMorePhotos = () => {
+  const handleLoadMorePhotos = async () => {
     console.log("getRandomPhotos ~ nextPage", nextPage);
-    getRandomPhotos(nextPage).then((images) => {
-      console.log(images);
-      // concat
-      const newPhotos = [...randomPhotos, ...images];
-      console.log("getRandomPhotos ~ newPhotos", newPhotos);
-      setRandomPhotos(newPhotos);
-      setNextPage(nextPage + 1);
-    });
+    const images = await getRandomPhotos(nextPage);
+    const newPhotos = [...randomPhotos, ...images];
+    console.log("getRandomPhotos ~ newPhotos", newPhotos);
+    setRandomPhotos(newPhotos);
+    setNextPage(nextPage + 1);
   };
   useEffect(() => {
     // side-effects

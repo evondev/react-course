@@ -1,4 +1,5 @@
 import "./App.scss";
+import Counter from "./components/counter/Counter";
 import Photos from "./components/photo/Photos";
 // import Card from "./components/card/Card";
 // import Card2 from "./components/card/Card2";
@@ -15,7 +16,7 @@ import Photos from "./components/photo/Photos";
 function App() {
   return (
     <div>
-      <Photos></Photos>
+      <Counter></Counter>
     </div>
   );
 }
