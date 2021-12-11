@@ -1,7 +1,5 @@
 module.exports = {
-  mode: "jit",
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       backgroundImage: {
@@ -14,9 +12,6 @@ module.exports = {
         "secondary-gradient": `linear-gradient(86.88deg, #20e3b2, #2cccff)`,
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
