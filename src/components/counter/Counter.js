@@ -15,7 +15,7 @@ const Counter = () => {
 
   useEffect(() => {
     console.log("from input");
-  }, [info.lastName, info.firstName]);
+  }, [info.lastName]);
 
   // useEffect(() => {
   //   // setCount(count + 1);

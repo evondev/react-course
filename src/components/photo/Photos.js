@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 const getRandomPhotos = async (page) => {
   try {
@@ -20,7 +20,10 @@ const Photos = () => {
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(1);
   // console.log("outside");
-  const handleLoadMorePhotos = async () => {
+  // instance
+  // Ben Awad
+  const handleLoadMorePhotos = useRef({});
+  handleLoadMorePhotos.current = async () => {
     console.log("getRandomPhotos ~ nextPage", nextPage);
     const images = await getRandomPhotos(nextPage);
     const newPhotos = [...randomPhotos, ...images];
@@ -32,7 +35,7 @@ const Photos = () => {
     // side-effects
     // document.title = "Welcome to useEffect";
     // console.log("inside");
-    handleLoadMorePhotos();
+    handleLoadMorePhotos.current();
   }, []);
   return (
     <div>
@@ -53,7 +56,7 @@ const Photos = () => {
       </div>
       <div className="text-center">
         <button
-          onClick={handleLoadMorePhotos}
+          onClick={handleLoadMorePhotos.current}
           className="inline-block px-8 py-4 bg-purple-600 text-white"
         >
           Load more

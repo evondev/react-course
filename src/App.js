@@ -1,6 +1,8 @@
 import "./App.scss";
 import Counter from "./components/counter/Counter";
+import Header from "./components/Header";
 import Photos from "./components/photo/Photos";
+import Timer from "./components/Timer";
 // import Card from "./components/card/Card";
 // import Card2 from "./components/card/Card2";
 // import CardList from "./components/card/CardList";
@@ -16,7 +18,7 @@ import Photos from "./components/photo/Photos";
 function App() {
   return (
     <div>
-      <Counter></Counter>
+      <Photos></Photos>
     </div>
   );
 }
