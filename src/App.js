@@ -1,8 +1,10 @@
 import "./App.scss";
-import Counter from "./components/counter/Counter";
-import Header from "./components/Header";
-import Photos from "./components/photo/Photos";
-import Timer from "./components/Timer";
+// import Counter from "./components/counter/Counter";
+// import Header from "./components/Header";
+import HackerNews from "./components/news/HackerNews";
+import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
+// import Photos from "./components/photo/Photos";
+// import Timer from "./components/Timer";
 // import Card from "./components/card/Card";
 // import Card2 from "./components/card/Card2";
 // import CardList from "./components/card/CardList";
@@ -18,7 +20,7 @@ import Timer from "./components/Timer";
 function App() {
   return (
     <div>
-      <Photos></Photos>
+      <HackerNewsWithReducer></HackerNewsWithReducer>
     </div>
   );
 }
