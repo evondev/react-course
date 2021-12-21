@@ -1,8 +1,10 @@
 import "./App.scss";
+import React, { useEffect, useRef, useState } from "react";
+import StopWatch from "./components/StopWatch";
 // import Counter from "./components/counter/Counter";
 // import Header from "./components/Header";
-import HackerNews from "./components/news/HackerNews";
-import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
+// import HackerNews from "./components/news/HackerNews";
+// import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
 // import Photos from "./components/photo/Photos";
 // import Timer from "./components/Timer";
 // import Card from "./components/card/Card";
@@ -18,9 +20,24 @@ import HackerNewsWithReducer from "./components/news/HackerNewsWithReducer";
 //   orange: "#ffa400",
 // };
 function App() {
+  // const [count, setCount] = React.useState(0);
+  // const countRef = React.useRef(0);
+  // const handle = () => {
+  //   const updateCount = countRef.current + 1;
+  //   console.log(`Clicked ${updateCount} times`);
+  //   countRef.current++;
+  // };
+  // console.log("Render");
+  // useEffect(() => {
+  //   const timer = setInterval();
+  //   return () => {
+  //     clearInterval(timer);
+  //   }
+  // }, []);
+
   return (
     <div>
-      <HackerNewsWithReducer></HackerNewsWithReducer>
+      <StopWatch></StopWatch>
     </div>
   );
 }
