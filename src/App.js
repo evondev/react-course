@@ -1,6 +1,8 @@
 import "./App.scss";
 import React, { useEffect, useRef, useState } from "react";
 import StopWatch from "./components/StopWatch";
+import Input from "./components/Input";
+import TextareaAutoResize from "./components/TextareaAutoResize";
 // import Counter from "./components/counter/Counter";
 // import Header from "./components/Header";
 // import HackerNews from "./components/news/HackerNews";
@@ -37,7 +39,9 @@ function App() {
 
   return (
     <div>
-      <StopWatch></StopWatch>
+      {/* <StopWatch></StopWatch> */}
+      {/* <Input></Input> */}
+      <TextareaAutoResize></TextareaAutoResize>
     </div>
   );
 }
