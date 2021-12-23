@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import StopWatch from "./components/StopWatch";
 import Input from "./components/Input";
 import TextareaAutoResize from "./components/TextareaAutoResize";
+import Dropdown from "./components/Dropdown";
 // import Counter from "./components/counter/Counter";
 // import Header from "./components/Header";
 // import HackerNews from "./components/news/HackerNews";
@@ -41,7 +42,10 @@ function App() {
     <div>
       {/* <StopWatch></StopWatch> */}
       {/* <Input></Input> */}
-      <TextareaAutoResize></TextareaAutoResize>
+      {/* <TextareaAutoResize></TextareaAutoResize> */}
+      <div className="p-5">
+        <Dropdown></Dropdown>
+      </div>
     </div>
   );
 }
