@@ -4,6 +4,7 @@ import StopWatch from "./components/StopWatch";
 import Input from "./components/Input";
 import TextareaAutoResize from "./components/TextareaAutoResize";
 import Dropdown from "./components/Dropdown";
+import Blog from "./components/Blog";
 // import Counter from "./components/counter/Counter";
 // import Header from "./components/Header";
 // import HackerNews from "./components/news/HackerNews";
@@ -43,9 +44,10 @@ function App() {
       {/* <StopWatch></StopWatch> */}
       {/* <Input></Input> */}
       {/* <TextareaAutoResize></TextareaAutoResize> */}
-      <div className="p-5">
+      {/* <div className="p-5">
         <Dropdown></Dropdown>
-      </div>
+      </div> */}
+      <Blog></Blog>
     </div>
   );
 }
