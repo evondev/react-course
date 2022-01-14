@@ -1,10 +1,10 @@
 import "./App.scss";
 import React from "react";
-import Form from "./components/form/Form";
+import MovieSearchApp from "./components/MovieSearchApp";
 function App() {
   return (
     <div>
-      <Form></Form>
+      <MovieSearchApp></MovieSearchApp>
     </div>
   );
 }

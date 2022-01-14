@@ -18,8 +18,8 @@ export default function useHover() {
       dom.addEventListener("mouseout", handleMouseOut);
     }
     return () => {
-      dom.removeEventListener("mouseover", handleMouseOver);
-      dom.removeEventListener("mouseout", handleMouseOut);
+      dom && dom.removeEventListener("mouseover", handleMouseOver);
+      dom && dom.removeEventListener("mouseout", handleMouseOut);
     };
   }, []);
   return {
