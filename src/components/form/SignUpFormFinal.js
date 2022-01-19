@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage, useField } from "formik";
+import { Formik, Form, useField } from "formik";
 import * as Yup from "yup";
 
 const SignUpFormFinal = () => {
@@ -13,17 +13,17 @@ const SignUpFormFinal = () => {
         job: "",
         terms: false,
       }}
-      // validationSchema={Yup.object({
-      //   firstName: Yup.string().required("Required"),
-      //   lastName: Yup.string().required("Required"),
-      //   email: Yup.string().email().required("Required"),
-      //   intro: Yup.string().required("Required"),
-      //   job: Yup.string().required("Required"),
-      //   terms: Yup.boolean().oneOf(
-      //     [true],
-      //     "Please check the terms and conditions"
-      //   ),
-      // })}
+      validationSchema={Yup.object({
+        firstName: Yup.string().required("Required"),
+        lastName: Yup.string().required("Required"),
+        email: Yup.string().email().required("Required"),
+        intro: Yup.string().required("Required"),
+        job: Yup.string().required("Required"),
+        terms: Yup.boolean().oneOf(
+          [true],
+          "Please check the terms and conditions"
+        ),
+      })}
       onSubmit={(values, actions) => {
         // console.log("SignUpFormFinal ~ actions", actions);
         // console.log(values);
