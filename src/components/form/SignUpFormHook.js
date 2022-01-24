@@ -1,5 +1,5 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useEffect } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import axios from "axios";
@@ -16,8 +16,14 @@ const SignUpFormHook = () => {
     register,
     handleSubmit,
     formState: { errors, isSubmitting, isValid, isDirty, dirtyFields },
+    watch,
+    reset,
+    resetField,
+    setFocus,
+    setValue,
+    control,
   } = useForm({
-    resolver: yupResolver(schemaValidation),
+    // resolver: yupResolver(schemaValidation),
     mode: "onChange",
   });
   console.log("SignUpFormHook ~ dirtyFields", dirtyFields);
@@ -25,11 +31,21 @@ const SignUpFormHook = () => {
   // console.log("SignUpFormHook ~ errors", errors);
   // console.log("SignUpFormHook ~ formState", formState);
   // errors = formState.errors; {}
-  console.log("SignUpFormHook ~ isDirty", isDirty);
-  console.log("SignUpFormHook ~ isValid", isValid);
+  // console.log("SignUpFormHook ~ isDirty", isDirty);
+  // console.log("SignUpFormHook ~ isValid", isValid);
+  const watchShowAge = watch("showAge", false);
+  console.log("SignUpFormHook ~ watchShowAge", watchShowAge);
   const onSubmit = async (values) => {
+    console.log("onSubmit ~ values", values);
     if (isValid) {
       console.log("send data to backend");
+      // after successfuly submitted
+      // then reset form
+      reset({
+        firstName: "evondev",
+        lastName: "tuan",
+        email: "tuan@gmail.com",
+      });
     }
     // const response = await axios.get(
     //   "https://hn.algolia.com/api/v1/search?query=react"
@@ -42,6 +58,15 @@ const SignUpFormHook = () => {
     //   }, 5000);
     // });
   };
+  useEffect(() => {
+    setFocus("firstName");
+  }, [setFocus]);
+  const handleSetDemoData = () => {
+    setValue("firstName", "evondev", {});
+    setValue("lastName", "tuan");
+    setValue("email", "tuan@gmail.com");
+  };
+
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -84,13 +109,30 @@ const SignUpFormHook = () => {
       </div>
       <div className="flex flex-col gap-2 mb-5">
         <label htmlFor="email">Email address</label>
-        <input
+        <MyInput
+          name="email"
+          placeholder="Enter your email address"
+          id="email"
+          control={control}
+        ></MyInput>
+        {/* <input
           type="email"
           id="email"
           placeholder="Enter your email address"
           className="p-4 rounded-md border border-gray-100"
           {...register("email")}
-        />
+        /> */}
+      </div>
+      <div className="flex flex-col gap-2 mb-5">
+        <input type="checkbox" {...register("showAge")} />
+        {watchShowAge && (
+          <input
+            type="number"
+            name=""
+            id=""
+            placeholder="Please enter your age"
+          />
+        )}
       </div>
       <div>
         <button
@@ -104,7 +146,32 @@ const SignUpFormHook = () => {
           )}
         </button>
       </div>
+      <div>
+        <button
+          className="p-3 bg-green-400 text-white"
+          onClick={handleSetDemoData}
+        >
+          Demo data
+        </button>
+      </div>
     </form>
+  );
+};
+
+const MyInput = ({ control, ...props }) => {
+  return (
+    <Controller
+      name={props.name}
+      control={control}
+      defaultValue=""
+      render={({ field }) => (
+        <input
+          className="p-4 rounded-md border border-gray-100"
+          {...field}
+          {...props}
+        />
+      )}
+    ></Controller>
   );
 };
 
