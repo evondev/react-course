@@ -30,7 +30,7 @@ function DropdownList({ coords }) {
       className="absolute left-0 w-full bg-white border border-gray-200 rounded-lg top-full"
       style={{
         left: coords.left,
-        top: coords.top + coords.height,
+        top: coords.top + coords.height + window.scrollY,
         width: coords.width,
       }}
     >

@@ -1,32 +1,29 @@
-import "./App.scss";
-import React, { Fragment, useState } from "react";
-import Modal from "./components/modal/Modal";
-import Dropdown from "./components/Dropdown";
-import DropdownPortal from "./components/DropdownPortal";
-function App() {
-  const [showModal, setShowModal] = useState(false);
+import React, { useState } from "react";
+import ModalBase from "./components/modal/ModalBase";
+
+const App = () => {
+  const [openModalBase, setOpenModalBase] = useState(false);
   return (
-    <Fragment>
-      <div className="relative z-0">
-        <Modal open={showModal} handleClose={() => setShowModal(false)}></Modal>
-      </div>
+    <div className="p-5">
       <button
-        className="p-4 m-5 text-white bg-blue-500 rounded-md"
-        onClick={() => setShowModal(true)}
+        className="p-5 rounded-lg text-white text-center bg-blue-400"
+        onClick={() => setOpenModalBase(true)}
       >
-        Show modal
+        Open modal base
       </button>
-      <div className="relative z-30">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quasi
-        commodi at laborum illo, ducimus porro ex tenetur sit architecto cumque.
-        Ipsam quia, non distinctio obcaecati quasi placeat tempore fugiat?
-      </div>
-      <div className="p-5 overflow-hidden">
-        <DropdownPortal></DropdownPortal>
-      </div>
-    </Fragment>
+      <ModalBase
+        visible={openModalBase}
+        onClose={() => setOpenModalBase(false)}
+      >
+        <div className="bg-white p-10 rounded-lg w-full max-w-[320px]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+          vitae, et obcaecati reiciendis, labore cumque dolorum est veritatis
+          repellendus dolor repellat, modi maiores porro minima quae ut magnam!
+          Obcaecati, eos!
+        </div>
+      </ModalBase>
+    </div>
   );
-}
-// Fragments
-// getBoundingClientRect
+};
+
 export default App;

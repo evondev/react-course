@@ -25,11 +25,10 @@ const gameReducer = (state, action) => {
       const { index, winner } = action.payload;
       if (winner || board[index]) return state;
       const nextState = JSON.parse(JSON.stringify(state));
-      console.log("gameReducer ~ nextState", nextState);
       // board[index] = state.xIsNext ? "X" : "O";
       nextState.board[index] = xIsNext ? "X" : "O";
       nextState.xIsNext = !xIsNext;
-
+      console.log(state);
       return nextState;
     }
     case "RESET": {

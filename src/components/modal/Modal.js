@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
+
 // createPortal
 const Modal = ({ open = false, handleClose = () => {} }) => {
   if (typeof document === "undefined") return <div className="modal"></div>;
@@ -62,5 +64,8 @@ const Modal = ({ open = false, handleClose = () => {} }) => {
     document.querySelector("body")
   );
 };
-
+Modal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+};
 export default Modal;
