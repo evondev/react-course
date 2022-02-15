@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import ModalAdvanced from "./components/modal/ModalAdvanced";
 import ModalBase from "./components/modal/ModalBase";
 
 const App = () => {
   const [openModalBase, setOpenModalBase] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className="p-5">
       <button
@@ -10,6 +12,12 @@ const App = () => {
         onClick={() => setOpenModalBase(true)}
       >
         Open modal base
+      </button>
+      <button
+        className="p-5 rounded-lg text-white text-center bg-blue-400 ml-5"
+        onClick={() => setOpenModal(true)}
+      >
+        Open modal
       </button>
       <ModalBase
         visible={openModalBase}
@@ -22,6 +30,35 @@ const App = () => {
           Obcaecati, eos!
         </div>
       </ModalBase>
+      <ModalAdvanced
+        visible={openModal}
+        onClose={() => setOpenModal(false)}
+        bodyClassName="w-full max-w-[400px] bg-white p-10 rounded-lg"
+      >
+        <div className="flex flex-col gap-3 mb-5">
+          <label htmlFor="email" className="text-sm cursor-pointer">
+            Email address
+          </label>
+          <input
+            type="email"
+            className="w-full text-sm leading-normal bg-[#E7ECF3] rounded-lg p-4"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div className="flex flex-col gap-3 mb-5">
+          <label htmlFor="password" className="text-sm cursor-pointer">
+            Password
+          </label>
+          <input
+            type="password"
+            className="w-full text-sm leading-normal bg-[#E7ECF3] rounded-lg p-4"
+            placeholder="Enter your password"
+          />
+        </div>
+        <button className="w-full p-4 text-base font-semibold text-white bg-[#316BFF] rounded-lg">
+          Sign in
+        </button>
+      </ModalAdvanced>
     </div>
   );
 };

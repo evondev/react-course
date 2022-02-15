@@ -24,3 +24,18 @@
     background-position-x: -200%;
   }
 }
+.zoom-enter .content {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.zoom-enter-active .content {
+  opacity: 1;
+  transform: scale(1);
+}
+.zoom-exit .content {
+  opacity: 1;
+}
+.zoom-exit-active .content {
+  opacity: 0;
+  transform: scale(0.5);
+}
