@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import ModalAdvanced from "./components/modal/ModalAdvanced";
 import ModalBase from "./components/modal/ModalBase";
+import TooltipAdvanced from "./components/tooltip/TooltipAdvanced";
 
 const App = () => {
   const [openModalBase, setOpenModalBase] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="p-5">
+    <div className="p-5 flex justify-center items-center h-screen">
       <button
         className="p-5 rounded-lg text-white text-center bg-blue-400"
         onClick={() => setOpenModalBase(true)}
@@ -24,6 +25,7 @@ const App = () => {
         onClose={() => setOpenModalBase(false)}
       >
         <div className="bg-white p-10 rounded-lg w-full max-w-[320px]">
+          <TooltipAdvanced title="Tooltip2">This is tooltip 2</TooltipAdvanced>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
           vitae, et obcaecati reiciendis, labore cumque dolorum est veritatis
           repellendus dolor repellat, modi maiores porro minima quae ut magnam!
@@ -59,6 +61,9 @@ const App = () => {
           Sign in
         </button>
       </ModalAdvanced>
+      <div className="inline-block ml-5">
+        <TooltipAdvanced title="Tooltip">This is a tooltip</TooltipAdvanced>
+      </div>
     </div>
   );
 };
