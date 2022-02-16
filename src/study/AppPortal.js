@@ -1,11 +1,11 @@
 import "./App.scss";
 import React, { Fragment, useState } from "react";
-import Modal from "./components/modal/Modal";
-import Dropdown from "./components/Dropdown";
-import DropdownPortal from "./components/DropdownPortal";
-import Tooltip from "./components/tooltip/Tooltip";
-import SignUpForm from "./components/form/SignUpForm";
-import GameWithReducer from "./components/tictactoe/GameWithReducer";
+import Modal from "../components/modal/Modal";
+import Dropdown from "../components/Dropdown";
+import DropdownPortal from "../components/DropdownPortal";
+import Tooltip from "../components/tooltip/Tooltip";
+import SignUpForm from "../components/form/SignUpForm";
+import GameWithReducer from "../components/tictactoe/GameWithReducer";
 import { ErrorBoundary } from "react-error-boundary";
 
 function ErrorFallback({ error, resetErrorBoundary }) {
