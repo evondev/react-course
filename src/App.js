@@ -1,4 +1,6 @@
-import React from "react";
+import React, { Fragment } from "react";
+import HeaderMain from "./components/HeaderMain";
+import { AuthProvider } from "./contexts/auth-context";
 import { CountProvider, useCount } from "./contexts/countContext";
 
 function CountDisplay() {
@@ -24,12 +26,17 @@ function Counter() {
 const App = () => {
   // const [count, setCount] = useState(0);
   return (
-    <div className="p-5 flex items-center justify-center gap-x-5">
+    <Fragment>
+      {/* <div className="p-5 flex items-center justify-center gap-x-5">
       <CountProvider>
         <CountDisplay></CountDisplay>
         <Counter></Counter>
       </CountProvider>
-    </div>
+    </div> */}
+      <AuthProvider>
+        <HeaderMain></HeaderMain>
+      </AuthProvider>
+    </Fragment>
   );
 };
 
