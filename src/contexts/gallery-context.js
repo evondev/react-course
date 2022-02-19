@@ -1,3 +1,5 @@
+import useLocalStorage from "../hooks/useLocalStorage";
+
 const { createContext, useContext, useState } = require("react");
 
 const fakeData = [
@@ -35,8 +37,13 @@ const fakeData = [
 
 const GalleryContext = createContext();
 function GalleryProvider(props) {
-  const [photos, setPhotos] = useState(fakeData);
-  const [cartItems, setCartItems] = useState([]);
+  const { storedValue, setValue } = useLocalStorage("photos", fakeData);
+  const { storedValue: storedCart, setValue: setStoredCart } = useLocalStorage(
+    "cartItems",
+    []
+  );
+  const [photos, setPhotos] = useState(storedValue);
+  const [cartItems, setCartItems] = useState(storedCart);
   const [favoriteList, setFavoriteList] = useState([]);
 
   function toggleFavorite(photoId) {
@@ -47,6 +54,7 @@ function GalleryProvider(props) {
       return photo;
     });
     setPhotos(updatedArray);
+    setValue(updatedArray);
   }
   // 1. Viết function addToCart
   // 2. Function addToCart truyền params là photo
@@ -57,16 +65,22 @@ function GalleryProvider(props) {
       const isExisted = prevItems.some((item) => item.id === newItem.id);
       console.log("setCartItems ~ isExisted", isExisted);
       // 5. Nếu tồn tại thì trả về danh sách trước đó
-      if (isExisted) return [...prevItems];
+      if (isExisted) {
+        setStoredCart([...prevItems]);
+        return [...prevItems];
+      }
       // 6. Chưa tồn tại thì thêm vào giỏ hàng
+      setStoredCart([...prevItems, newItem]);
       return [...prevItems, newItem];
     });
   }
 
   function removeFromCart(photoId) {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.id !== photoId)
-    );
+    setCartItems((prevItems) => {
+      const result = prevItems.filter((item) => item.id !== photoId);
+      setStoredCart(result);
+      return result;
+    });
   }
 
   const value = {

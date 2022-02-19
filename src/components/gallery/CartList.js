@@ -3,7 +3,7 @@ import { useGallery } from "../../contexts/gallery-context";
 
 const CartList = () => {
   const { cartItems, removeFromCart } = useGallery();
-  console.log("CartList ~ cartItems", cartItems);
+  // console.log("CartList ~ cartItems", cartItems);
   return (
     <div className="py-10 px-5 flex flex-col gap-5 items-start">
       {cartItems.length > 0 &&
