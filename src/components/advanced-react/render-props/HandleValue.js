@@ -1,7 +1,26 @@
 import React, { useState } from "react";
 // lifting state
+function useOnChange(initialValue = "") {
+  const [value, setValue] = useState(initialValue);
+  return {
+    value,
+    setValue,
+  };
+}
 const HandleValue = () => {
-  return <Input>{(value) => <DisplayValue value={value} />}</Input>;
+  const { value, setValue } = useOnChange("");
+  return (
+    <>
+      <input
+        className="p-3 rounded-md border border-gray-500 w-full max-w-[500px]"
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <DisplayValue value={value}></DisplayValue>
+    </>
+  );
+  // return <Input>{(value) => <DisplayValue value={value} />}</Input>;
 };
 
 const Input = (props) => {
