@@ -1,24 +1,18 @@
 import React from "react";
-import Accordion from "./components/advanced-react/react-composition/Accordion";
+import Switch from "./components/switch/Switch";
+function useToggle() {
+  const [on, setOn] = React.useState(false);
+  const toggle = () => setOn(!on);
+
+  return { on, toggle };
+}
 const App = () => {
+  const { on, toggle } = useToggle();
   return (
-    <div className="p-10 w-full max-w-[600px] mx-auto">
-      <Accordion header="Can I change my plan later">
-        <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-          officiis quam adipisci consequuntur voluptate? Harum, ipsam est quo
-          iusto, labore ipsa rem repellat distinctio debitis commodi eos. Magni,
-          officia voluptate.
-        </div>
-      </Accordion>
-      <Accordion header="Can I become a Frontend Developer">
-        <div>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-          officiis quam adipisci consequuntur voluptate? Harum, ipsam est quo
-          iusto, labore ipsa rem repellat distinctio debitis commodi eos. Magni,
-          officia voluptate.
-        </div>
-      </Accordion>
+    <div>
+      <Switch on={on} onClick={toggle} />
+      <hr />
+      <button aria-label="custom-button">{on ? "on" : "off"}</button>
     </div>
   );
 };
