@@ -5,6 +5,8 @@ import AccordionHeader from "./AccordionHeader";
 // import useToggle from "./useToggle";
 // Specialized component
 // Container component
+// Compound component
+// props drilling
 const Accordion = ({ header, children }) => {
   return (
     <AccordionProvider>
