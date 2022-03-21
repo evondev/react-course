@@ -1,5 +1,5 @@
 // import React from 'react';
-
+//
 // const MyComponent = () => {
 //   return (
 //     <div>
@@ -25,3 +25,15 @@
 // };
 
 // export default MyComponent;
+// function MyComponent() {
+// // const {value} = useValue();
+// // const {value: value2} = usePage();
+// // const {value: value3} = useAPI();
+//   return (
+//     <ComponentA>
+//       <ComponentB>
+//         <ComponentC></ComponentC>
+//       </ComponentB>
+//     </ComponentA>
+//   )
+// }
