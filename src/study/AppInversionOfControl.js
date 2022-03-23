@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dropdown } from "./components/advanced-react/inversion-of-control";
+import { Dropdown } from "../components/advanced-react/inversion-of-control";
 const options = [
   {
     title: "Frontend Developer",
