@@ -29,12 +29,11 @@ const App = () => {
       ></Dropdown> */}
       <Dropdown
         placeholder={`${job || "Select your job"}`}
-        inputPlaceholder="Search your jobs..."
         onClick={handleSelectJob}
         onChange={(e) => setFilter(e.target.value)}
       >
         <div className="options border border-gray-300 rounded">
-          <Dropdown.Search></Dropdown.Search>
+          <Dropdown.Search placeholder="Search your jobs..."></Dropdown.Search>
           {options.map((option) => (
             <Dropdown.Option key={option.title}>
               <span>{option.title}</span>
