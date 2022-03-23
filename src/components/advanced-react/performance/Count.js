@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
-
+// React.memo(Component)
+// -> Component sẽ bị re-render khi state của nó thay đổi(trong trường hợp này là `count`)
+// -> Component sẽ bị re-render khi nó có props truyền vào thay đổi
 const Count = React.memo(({ calculate }) => {
   const [count, setCount] = useState(0);
   const renderRef = useRef(0);
@@ -8,7 +10,7 @@ const Count = React.memo(({ calculate }) => {
       <div>Count: {count}</div>
       <div>Renders: {renderRef.current++}</div>
       <button
-        className="p-2 bg-blue-400 text-white rounded-md"
+        className="p-3 rounded bg-blue-400 text-white"
         onClick={() => setCount((c) => c + 1)}
       >
         Increment
