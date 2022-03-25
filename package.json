@@ -9,6 +9,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.24.0",
+    "firebase": "^9.6.10",
     "formik": "^2.2.9",
     "lodash": "^4.17.21",
     "node-sass": "^4.14.1",
