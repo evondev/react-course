@@ -1,7 +1,12 @@
 import React from "react";
+import FirebaseApp from "./firebase/FirebaseApp";
 
 const App = () => {
-  return <div></div>;
+  return (
+    <div>
+      <FirebaseApp></FirebaseApp>
+    </div>
+  );
 };
 
 export default App;
