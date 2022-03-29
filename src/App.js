@@ -1,12 +1,7 @@
 import React from "react";
-import FirebaseAuth from "./firebase/FirebaseAuth";
 
 const App = () => {
-  return (
-    <div>
-      <FirebaseAuth></FirebaseAuth>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default App;
