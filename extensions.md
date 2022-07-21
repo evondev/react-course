@@ -10,4 +10,4 @@
 - Turbo Console Log
 - Visual Studio IntelliCode
 - styled-components-snippets
-- vscoded-styled-components
+- vscode-styled-components
