@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const TextareaAutoResize = () => {
   const [text, setText] = useState("demo");
@@ -13,7 +13,7 @@ const TextareaAutoResize = () => {
     setText(event.target.value);
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setTextareaHeight(`${textareaRef?.current?.scrollHeight}px`);
     // setParentHeight(`${textareaRef?.current?.scrollHeight}px`);
   }, [text]);
@@ -21,7 +21,7 @@ const TextareaAutoResize = () => {
   return (
     <div className="p-5">
       <textarea
-        className="transition-all overflow-hidden w-full max-w-[400px] p-5 rounded-lg border border-gray-300 focus:border-blue-400 resize-none leading-normal"
+        className="transition-all overflow-hidden w-full max-w-[400px] p-5 rounded-lg border border-gray-300 focus:border-blue-400 resize-none leading-normal outline-none"
         placeholder="Please enter your content..."
         value={text}
         ref={textareaRef}

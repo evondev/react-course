@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { auth, db } from "./firebase-config";
 import { addDoc, collection } from "firebase/firestore";
+import { useEffect } from "react";
 
 const FirebaseAuth = () => {
   const [values, setValues] = useState({
@@ -16,13 +17,15 @@ const FirebaseAuth = () => {
     password: "",
   });
   const [userInfo, setUserInfo] = useState("");
-  onAuthStateChanged(auth, (currentUser) => {
-    if (currentUser) {
-      setUserInfo(currentUser);
-    } else {
-      setUserInfo("");
-    }
-  });
+  useEffect(() => {
+    onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        setUserInfo(currentUser);
+      } else {
+        setUserInfo("");
+      }
+    });
+  }, []);
   const handleInputChange = (e) => {
     setValues({
       ...values,
@@ -79,29 +82,29 @@ const FirebaseAuth = () => {
         <form onSubmit={handleCreateUser}>
           <input
             type="email"
-            className="p-3 rounded border border-gray-200 w-full mb-5 outline-none focus:border-blue-500"
+            className="w-full p-3 mb-5 border border-gray-200 rounded outline-none focus:border-blue-500"
             name="email"
             onChange={handleInputChange}
             placeholder="Enter your email address"
           />
           <input
             type="password"
-            className="p-3 rounded border border-gray-200 w-full mb-5 outline-none focus:border-blue-500"
+            className="w-full p-3 mb-5 border border-gray-200 rounded outline-none focus:border-blue-500"
             name="password"
             onChange={handleInputChange}
             placeholder="Enter your password"
           />
           <button
             type="submit"
-            className="p-3 bg-blue-500 text-white text-sm font-medium w-full rounded-lg"
+            className="w-full p-3 text-sm font-medium text-white bg-blue-500 rounded-lg"
           >
             SignUp
           </button>
         </form>
-        <div className="mt-10 flex items-center gap-x-5">
+        <div className="flex items-center mt-10 gap-x-5">
           <span>{userInfo?.displayName}</span>
           <button
-            className="p-3 bg-purple-500 text-white text-sm font-medium rounded-lg"
+            className="p-3 text-sm font-medium text-white bg-purple-500 rounded-lg"
             onClick={handleSignOut}
           >
             SignOut
@@ -112,21 +115,21 @@ const FirebaseAuth = () => {
         <form onSubmit={handleLogin}>
           <input
             type="email"
-            className="p-3 rounded border border-gray-200 w-full mb-5 outline-none focus:border-blue-500"
+            className="w-full p-3 mb-5 border border-gray-200 rounded outline-none focus:border-blue-500"
             name="email"
             onChange={handleInputChange}
             placeholder="Enter your email address"
           />
           <input
             type="password"
-            className="p-3 rounded border border-gray-200 w-full mb-5 outline-none focus:border-blue-500"
+            className="w-full p-3 mb-5 border border-gray-200 rounded outline-none focus:border-blue-500"
             name="password"
             onChange={handleInputChange}
             placeholder="Enter your password"
           />
           <button
             type="submit"
-            className="p-3 bg-pink-500 text-white text-sm font-medium w-full rounded-lg"
+            className="w-full p-3 text-sm font-medium text-white bg-pink-500 rounded-lg"
           >
             Login
           </button>
