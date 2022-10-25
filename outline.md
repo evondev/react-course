@@ -278,17 +278,22 @@
 - Xây dựng component FeatureCampaign
 - Xây dựng component CampaignItem
 - Xây dựng component Heading
- -->
-
 - Thiết lập global store với Redux Saga
 - Xử lý active sidebar link
 - Xây dựng component thêm Campaign
 - Xử lý validation
 - Thêm thư viện date-picker và tùy biến
 - Thực hiện thêm dữ liệu vào json-server
+- JWT
+- Đăng nhập
+- Đăng ký
+- Đăng xuất
+- Permissions
+ -->
 
 # Chương 16: Kiến thức bổ sung
 
+<!--
 - StrictMode là gì ?
 - Flow của React
 - useLayoutEffect khác với useEffect như thế nào ?
@@ -326,31 +331,29 @@
 - Conditional Types: Extends
 - Utility Types: Pick, Omit, Partial, Record
 - As
-- Sử dụng Typescript với React component
+- Sử dụng Typescript với React component -->
 
-# Chương 17: Redux toolkit query vs React query cơ bản
-
-# Chương 18: Tối ưu hiệu suất React
+# Chương 17: React Performance
 
 - Props drilling toàn tập
-- Tối ưu React Context bạn đã biết chưa
+- Nắm vững react composition và container pattern nâng cao
 - Tất tần tật về re-render trong React
 - Tại sao bạn nên sử dụng key là index
-- Bạn thực sự không cần useMemo và useCallback
-- Nắm vững react composition và container pattern nâng cao
-- Cách viết code react để có hiệu suất tốt nhất
 - useMemo, useCallback và memo
-- Xử lý dữ liệu lớn với react-virtual
+- Bạn thực sự không cần useMemo và useCallback
+- Cách viết code react để có hiệu suất tốt nhất
+- Tối ưu React Context bạn đã biết chưa
 - Tất tần tật về useEffect
+- Xử lý dữ liệu lớn với react-virtual
 
-# Chương 19: Quản lý components với Storybook
+# Chương 18: Testing component React
 
-# Chương 20: Tìm hiểu thư viện MaterialUI
+# Chương 19: RTK, React Query, Storybook
 
-# Chương 21: Tìm hiểu thư viện AntD
+# Chương 20: Tìm hiểu thư viện MaterialUI, AntD, CharkaUI
 
-# Chương 22: Testing component React
+# Chương 21: NextJS cơ bản cho người mới
 
 # Chương 23: React class component
 
-# Chương 24: NextJS cơ bản
+# Chương 24: Những thay đổi cập nhật mới
