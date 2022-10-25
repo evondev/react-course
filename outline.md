@@ -261,11 +261,10 @@
 - Simple Counter
 - Tìm hiểu Generator Functions
 - Redux Saga
--->
 
 # Chương 15: Dự án cuối khóa Crownfunding
 
-<!-- - Giới thiệu và import giao diện
+- Giới thiệu và import giao diện
 - Chèn fonts và thiết lập Tailwind config
 - Tìm hiểu cấu trúc dự án
 - Code giao diện trang SignUp: UI, Responsive, Validate Form, Components(Input, Button, Label, Checkbox)
@@ -289,11 +288,9 @@
 - Đăng ký
 - Đăng xuất
 - Permissions
- -->
 
 # Chương 16: Kiến thức bổ sung
 
-<!--
 - StrictMode là gì ?
 - Flow của React
 - useLayoutEffect khác với useEffect như thế nào ?
@@ -345,15 +342,3 @@
 - Tối ưu React Context bạn đã biết chưa
 - Tất tần tật về useEffect
 - Xử lý dữ liệu lớn với react-virtual
-
-# Chương 18: Testing component React
-
-# Chương 19: RTK, React Query, Storybook
-
-# Chương 20: Tìm hiểu thư viện MaterialUI, AntD, CharkaUI
-
-# Chương 21: NextJS cơ bản cho người mới
-
-# Chương 23: React class component
-
-# Chương 24: Những thay đổi cập nhật mới

@@ -1,12 +1,7 @@
 import React from "react";
-import TextareaAutoResize from "./components/TextareaAutoResize";
 
 const App = () => {
-  return (
-    <div>
-      <TextareaAutoResize></TextareaAutoResize>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default App;
