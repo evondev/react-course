@@ -157,7 +157,7 @@ const MyCheckbox = ({ children, ...props }) => {
   return (
     <div className="flex flex-col gap-2 mb-5">
       <label className="flex items-center gap-2">
-        <input type="checkbox" {...field} {...props} />
+        <input type="checkbox" {...field} {...props} checked={field.value} />
         {children}
       </label>
       {meta.touched && meta.error ? (
